@@ -1,28 +1,33 @@
-package factory;
+package AbstractFactory.Sample.factory;
+
 import java.io.*;
 import java.util.ArrayList;
 
 public abstract class Page {
     protected String title;
     protected String author;
-    protected ArrayList content = new ArrayList();
+    protected ArrayList<Item> content = new ArrayList<Item>();
+
     public Page(String title, String author) {
         this.title = title;
         this.author = author;
     }
+
     public void add(Item item) {
         content.add(item);
     }
+
     public void output() {
         try {
             String filename = title + ".html";
             Writer writer = new FileWriter(filename);
             writer.write(this.makeHTML());
             writer.close();
-            System.out.println(filename + " ¤òºîÀ®¤·¤Þ¤·¤¿¡£");
+            System.out.println(filename + " ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Þ¤ï¿½ï¿½ï¿½ï¿½ï¿½");
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
     public abstract String makeHTML();
 }

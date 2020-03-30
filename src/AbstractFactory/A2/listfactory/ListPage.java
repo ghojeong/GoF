@@ -1,20 +1,22 @@
-package listfactory;
-import factory.*;
+package AbstractFactory.A2.listfactory;
+
+import AbstractFactory.A2.factory.*;
 import java.util.Iterator;
 
 public class ListPage extends Page {
     public ListPage(String title, String author) {
         super(title, author);
     }
+
     public String makeHTML() {
         StringBuffer buffer = new StringBuffer();
         buffer.append("<html><head><title>" + title + "</title></head>\n");
         buffer.append("<body>\n");
         buffer.append("<h1>" + title + "</h1>\n");
         buffer.append("<ul>\n");
-        Iterator it = content.iterator();
+        Iterator<Item> it = content.iterator();
         while (it.hasNext()) {
-            Item item = (Item)it.next();
+            Item item = it.next();
             buffer.append(item.makeHTML());
         }
         buffer.append("</ul>\n");

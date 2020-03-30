@@ -1,18 +1,21 @@
-package factory;
+package AbstractFactory.Sample.factory;
 
 public abstract class Factory {
-    public static Factory getFactory(String classname) {
+    public static Factory getFactory(String className) {
         Factory factory = null;
         try {
-            factory = (Factory)Class.forName(classname).newInstance();
+            factory = (Factory) Class.forName(className).getConstructor().newInstance();
         } catch (ClassNotFoundException e) {
-            System.err.println("¥¯¥é¥¹ " + classname + " ¤¬¸«¤Ä¤«¤ê¤Þ¤»¤ó¡£");
+            System.err.println("ï¿½ï¿½ï¿½é¥¹ " + className + " ï¿½ï¿½ï¿½ï¿½ï¿½Ä¤ï¿½ï¿½ï¿½Þ¤ï¿½ï¿½ï¿½");
         } catch (Exception e) {
             e.printStackTrace();
         }
         return factory;
     }
+
     public abstract Link createLink(String caption, String url);
+
     public abstract Tray createTray(String caption);
+
     public abstract Page createPage(String title, String author);
 }
