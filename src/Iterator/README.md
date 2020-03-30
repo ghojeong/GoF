@@ -1,6 +1,6 @@
 # Iterator
 
-## Script
+## Command
 
 ```sh
 javac -Xlint -d ./classes ./src/Iterator/**/*.java
