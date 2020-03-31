@@ -1,4 +1,4 @@
-package Iterator.Sample;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -9,7 +9,7 @@ public class Main {
         bookShelf.appendBook(new Book("Daddy-Long-Legs"));
         Iterator it = bookShelf.iterator();
         while (it.hasNext()) {
-            Book book = (Book) it.next();
+            Book book = (Book)it.next();
             System.out.println(book.getName());
         }
     }

@@ -1,24 +1,21 @@
-package AbstractFactory.Sample.tablefactory;
-
-import AbstractFactory.Sample.factory.*;
+package tablefactory;
+import factory.*;
 import java.util.Iterator;
 
 public class TableTray extends Tray {
     public TableTray(String caption) {
-        super(caption); // super(...)ï¿½È¤ï¿½ï¿½ï¿½É½ï¿½ï¿½Ë¡
+        super(caption);                     // super(...)¤È¤¤¤¦É½µ­Ë¡
     }
-
     public String makeHTML() {
         StringBuffer buffer = new StringBuffer();
         buffer.append("<td>");
         buffer.append("<table width=\"100%\" border=\"1\"><tr>");
-        buffer.append(
-                "<td bgcolor=\"#cccccc\" align=\"center\" colspan=\"" + tray.size() + "\"><b>" + caption + "</b></td>");
+        buffer.append("<td bgcolor=\"#cccccc\" align=\"center\" colspan=\""+ tray.size() + "\"><b>" + caption + "</b></td>");
         buffer.append("</tr>\n");
         buffer.append("<tr>\n");
-        Iterator<Item> it = tray.iterator();
+        Iterator it = tray.iterator();
         while (it.hasNext()) {
-            Item item = it.next();
+            Item item = (Item)it.next();
             buffer.append(item.makeHTML());
         }
         buffer.append("</tr></table>");

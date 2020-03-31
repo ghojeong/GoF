@@ -1,6 +1,4 @@
-package AbstractFactory.Sample;
-
-import AbstractFactory.Sample.factory.*;
+import factory.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -12,15 +10,15 @@ public class Main {
         }
         Factory factory = Factory.getFactory(args[0]);
 
-        Link asahi = factory.createLink("Ä«ï¿½ï¿½ï¿½ï¿½Ê¹", "http://www.asahi.com/");
-        Link yomiuri = factory.createLink("ï¿½ï¿½ï¿½ä¿·Ê¹", "http://www.yomiuri.co.jp/");
+        Link asahi = factory.createLink("Ä«Æü¿·Ê¹", "http://www.asahi.com/");
+        Link yomiuri = factory.createLink("ÆÉÇä¿·Ê¹", "http://www.yomiuri.co.jp/");
 
         Link us_yahoo = factory.createLink("Yahoo!", "http://www.yahoo.com/");
         Link jp_yahoo = factory.createLink("Yahoo!Japan", "http://www.yahoo.co.jp/");
         Link excite = factory.createLink("Excite", "http://www.excite.com/");
         Link google = factory.createLink("Google", "http://www.google.com/");
 
-        Tray traynews = factory.createTray("ï¿½ï¿½Ê¹");
+        Tray traynews = factory.createTray("¿·Ê¹");
         traynews.add(asahi);
         traynews.add(yomiuri);
 
@@ -28,12 +26,12 @@ public class Main {
         trayyahoo.add(us_yahoo);
         trayyahoo.add(jp_yahoo);
 
-        Tray traysearch = factory.createTray("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ó¥¸¥ï¿½");
+        Tray traysearch = factory.createTray("¥µ¡¼¥Á¥¨¥ó¥¸¥ó");
         traysearch.add(trayyahoo);
         traysearch.add(excite);
         traysearch.add(google);
 
-        Page page = factory.createPage("LinkPage", "ï¿½ï¿½ï¿½ ï¿½ï¿½");
+        Page page = factory.createPage("LinkPage", "·ë¾ë ¹À");
         page.add(traynews);
         page.add(traysearch);
         page.output();

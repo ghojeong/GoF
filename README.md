@@ -16,7 +16,9 @@ Gang of Four 가 확립한 디자인 패턴들을 공부하여 정리한 레포�
 ## Command
 
 ```sh
-javac -Xlint -d ./classes ./**/*.java
+cd ${directory}
 
-java -cp ./classes ${pacakge}.Main
+javac -Xlint -d ./ ./*.java
+
+java -cp ./ Main
 ```

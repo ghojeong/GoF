@@ -1,21 +1,19 @@
-package AbstractFactory.A2.listfactory;
-
-import AbstractFactory.A2.factory.*;
+package listfactory;
+import factory.*;
 import java.util.Iterator;
 
 public class ListTray extends Tray {
     public ListTray(String caption) {
         super(caption);
     }
-
     public String makeHTML() {
         StringBuffer buffer = new StringBuffer();
         buffer.append("<li>\n");
         buffer.append(caption + "\n");
         buffer.append("<ul>\n");
-        Iterator<Item> it = tray.iterator();
+        Iterator it = tray.iterator();
         while (it.hasNext()) {
-            Item item = it.next();
+            Item item = (Item)it.next();
             buffer.append(item.makeHTML());
         }
         buffer.append("</ul>\n");

@@ -1,6 +1,4 @@
-package AbstractFactory.A2;
-
-import AbstractFactory.A2.factory.*;
+import factory.*;
 
 public class Main {
     public static void main(String[] args) {
