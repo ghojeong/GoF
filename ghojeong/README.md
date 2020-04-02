@@ -12,7 +12,7 @@
 
 ## 2. 해당 디자인 패턴의 UML 그리기
 
-- <https://www.draw.io> 사용
+- [draw.io](https://github.com/jgraph/drawio-desktop/releases) 사용
 
 ## 3. 그려진 UML 대로 자바 클래스 구현
 
