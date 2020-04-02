@@ -21,4 +21,6 @@ cd ${directory}
 javac -Xlint -d ./ ./*.java
 
 java -cp ./ Main
+
+rm -rf ./**/*.class
 ```
