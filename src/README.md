@@ -10,10 +10,10 @@
 
 #### 용어 비교
 
-|    UML    |  Java  |       C,C++       |
-| :-------: | :----: | :---------------: |
-| attribute | field  |  member variable  |
-| operation | method | function function |
+|    UML    |  Java  |      C,C++      |
+| :-------: | :----: | :-------------: |
+| attribute | field  | member variable |
+| operation | method | member function |
 
 #### 선 비교
 
