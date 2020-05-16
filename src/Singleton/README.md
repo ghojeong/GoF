@@ -67,15 +67,53 @@ public class Main {
 }
 ```
 
-| Singleton                                     | Static Class                                             |
-| --------------------------------------------- | -------------------------------------------------------- |
-| Heap 메모리에 인스턴스가 생성됨               | Stack 메모리의 레퍼런스로 클래스에 접근                  |
-| 런타임에 인스턴스 생성                        | 컴파일 타임에 클래스 정의(따라서 앱 실행시 조금 더 빠름) |
-| Object의 함수 사용 가능                       | Object의 함수 사용 불가능(Object.clone)                  |
-| 다형성 가능 (getConfig 함수를 overwrite 가능) | 다형성 불가능                                            |
-| 상속과 인터페이스 구현 가능                   | extends, implements 불가능                               |
+| Singleton                                                  | Static Class                                             |
+| ---------------------------------------------------------- | -------------------------------------------------------- |
+| Heap 메모리에 인스턴스가 생성됨                            | Static 메모리에 생성                                     |
+| 런타임에 인스턴스 생성(동적으로 환경변수를 읽어올 수 있음) | 컴파일 타임에 클래스 정의(따라서 앱 실행시 조금 더 빠름) |
+| Object의 함수 사용 가능                                    | Object의 함수 사용 불가능(Object.clone)                  |
+| 다형성 가능 (getConfig 함수를 overwrite 가능)              | 다형성 불가능                                            |
+| 상속과 인터페이스 구현 가능                                | extends, implements 불가능                               |
 
 ![jvm](./img/jvm.png)
+
+## JVM 메모리
+
+![jvm_memory](./img/jvm_memory.png)
+
+### static 메모리
+
+- 다른말로 class 영역, method 영역
+- 패키지, 클래스 정보가 올라감
+- 전역 변수(global variable), static 멤버 및 함수가 올라감
+- 컴파일된 모든 static 정보가 메모리에 올라가는게 아니라, 실제로 호출될 때만 올라감
+- 한번 올라가면, JVM이 종료되거나 GC가 없애기 전까지, 고정된(static) 채로 메모리에 남아있음
+
+### stack 메모리
+
+- 지역 변수(local variable)가 올라감
+- 기본형 타입 변수(primitive data type)가 올라감
+- 참조 변수(reference variable)이 올라감
+- 중괄호를 열때({) stack 프레임이 push 되고, 닫을 때(}) pop 됨(LIFO)
+
+### heap 메모리
+
+- 참조 변수가 가리키는, 동적으로 생성된 인스턴스가 올라감
+- 인스턴스를 가리키는 모든 참조변수가 stack 메모리에서 pop 되면, GC가 인스턴스를 제거함
+- method는 어차피 같은 로직이므로, static 에 선언됨
+- 자식 인스턴스를 만들면, 부모 인스턴스도 heap 위에 올라감
+
+## 멀티 쓰레드
+
+| 멀티 프로세스                             | 멀티 쓰레드                             |
+| ----------------------------------------- | --------------------------------------- |
+| ![multi_process](./img/multi_process.png) | ![multi_thread](./img/multi_thread.png) |
+
+### Java Thread
+
+![java_thread](./img/java_thread.png)
+
+여러 쓰레드에서 Heap 위에 선언된 단 하나의 싱글톤 인스턴스에 접근할 수 있다.
 
 ## 접근(access) 및 생명주기(life cycle)
 
