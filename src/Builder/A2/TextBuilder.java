@@ -1,24 +1,29 @@
 public class TextBuilder extends Builder {
-    private StringBuffer buffer = new StringBuffer();           // このフィールドに文書を構築していく
-    protected void buildTitle(String title) {                       // プレーンテキストでのタイトル
-        buffer.append("==============================\n");          // 飾り線
-        buffer.append("『" + title + "』\n");                       // 『』つきのタイトル
-        buffer.append("\n");                                        // 空行
+    private StringBuffer buffer = new StringBuffer();
+
+    protected void buildTitle(String title) {
+        buffer.append("==============================\n");
+        buffer.append("[" + title + "]\n");
+        buffer.append("\n");
     }
-    protected void buildString(String str) {                        // プレーンテキストでの文字列
-        buffer.append('■' + str + "\n");                           // ■つきの文字列
-        buffer.append("\n");                                        // 空行
+
+    protected void buildString(String str) {
+        buffer.append('-' + str + "\n");
+        buffer.append("\n");
     }
-    protected void buildItems(String[] items) {                     // プレーンテキストでの箇条書き
+
+    protected void buildItems(String[] items) {
         for (int i = 0; i < items.length; i++) {
-            buffer.append("　・" + items[i] + "\n");                // ・つきの項目
+            buffer.append(" *" + items[i] + "\n");
         }
-        buffer.append("\n");                                        // 空行
+        buffer.append("\n");
     }
-    protected void buildDone() {                                 // 文書の完成
-        buffer.append("==============================\n");          // 飾り線
+
+    protected void buildDone() {
+        buffer.append("==============================\n");
     }
+
     public String getResult() {
-        return buffer.toString();                                   // StringBufferをStringに変換
+        return buffer.toString();
     }
 }

@@ -1,21 +1,16 @@
 public class Director {
     private Builder builder;
-    public Director(Builder builder) {      // Builder¤Î¥µ¥Ö¥¯¥é¥¹¤Î¥¤¥ó¥¹¥¿¥ó¥¹¤¬Í¿¤¨¤é¤ì¤ë¤Î¤Ç¡¢
-        this.builder = builder;             // builder¥Õ¥£¡¼¥ë¥É¤ËÊİ»ı¤·¤Æ¤ª¤¯¡£
+
+    public Director(Builder builder) {
+        this.builder = builder;
     }
-    public void construct() {             // Ê¸½ñ¹½ÃÛ
-        builder.makeTitle("Greeting");              // ¥¿¥¤¥È¥ë
-        builder.makeString("Ä«¤«¤éÃë¤Ë¤«¤±¤Æ");     // Ê¸»úÎó
-        builder.makeItems(new String[]{             // ²Õ¾ò½ñ¤­
-            "¤ª¤Ï¤è¤¦¤´¤¶¤¤¤Ş¤¹¡£",
-            "¤³¤ó¤Ë¤Á¤Ï¡£",
-        });
-        builder.makeString("Ìë¤Ë");                 // ÊÌ¤ÎÊ¸»úÎó
-        builder.makeItems(new String[]{             // ÊÌ¤Î²Õ¾ò½ñ¤­
-            "¤³¤ó¤Ğ¤ó¤Ï¡£",
-            "¤ª¤ä¤¹¤ß¤Ê¤µ¤¤¡£",
-            "¤µ¤è¤¦¤Ê¤é¡£",
-        });
-        builder.close();                 // Ê¸½ñ¤ò´°À®¤µ¤»¤ë
+
+    public void construct() {
+        builder.makeTitle("SoCam");
+        builder.makeString("ê³ ì •ì™„");
+        builder.makeItems(new String[] { "ì˜ì–´ ë‹‰ë‚´ì„ì€ ìº”ì…ë‹ˆë‹¤.", "ì˜¬í•´ ëª©í‘œ: ë­”ê°€ ì˜¤í”ˆì†ŒìŠ¤ í•´ë³´ê³  ì‹¶ìŠµë‹ˆë‹¤.", });
+        builder.makeString("ìœ í˜„ì„");
+        builder.makeItems(new String[] { "ì˜ì–´ ë‹‰ë„¤ì„ì€ ìë¹„ì— êµìˆ˜ë‹˜ì…ë‹ˆë‹¤.", "ì˜¬í•´ ëª©í‘œ: ì—‘ìŠ¤ë§¨ ë§Œë“¤ê¸°" });
+        builder.close(); // NOTE: close ë¥¼ í•´ ì£¼ì–´ì•¼ë§Œ ë¬¸ì„œê°€ ì™„ì„±ëœë‹¤.
     }
 }

@@ -1,33 +1,38 @@
 import java.io.*;
 
 public class HTMLBuilder extends Builder {
-    private String filename;                                    // 作成するファイル名
-    private PrintWriter writer;                                 // ファイルに書き込むPrintWriter
-    protected void buildTitle(String title) {                       // HTMLファイルでのタイトル
-        filename = title + ".html";                                 // タイトルを元にファイル名決定
+    private String filename;
+    private PrintWriter writer;
+
+    public void makeTitle(String title) {
+        filename = title + ".html";
         try {
-            writer = new PrintWriter(new FileWriter(filename));     // PrintWriterを作る
+            writer = new PrintWriter(new FileWriter(filename));
         } catch (IOException e) {
             e.printStackTrace();
         }
-        writer.println("<html><head><title>" + title + "</title></head><body>");    // タイトルを出力
+        writer.println("<html><head><title>" + title + "</title></head><body>");
         writer.println("<h1>" + title + "</h1>");
     }
-    protected void buildString(String str) {                        // HTMLファイルでの文字列
-        writer.println("<p>" + str + "</p>");                       // <p>タグで出力
+
+    public void makeString(String str) {
+        writer.println("<p>" + str + "</p>");
     }
-    protected void buildItems(String[] items) {                     // HTMLファイルでの箇条書き
-        writer.println("<ul>");                                     // <ul>と<li>で出力
+
+    public void makeItems(String[] items) {
+        writer.println("<ul>");
         for (int i = 0; i < items.length; i++) {
             writer.println("<li>" + items[i] + "</li>");
         }
         writer.println("</ul>");
     }
-    protected void buildDone() {                                 // 文書の完成
-        writer.println("</body></html>");                           // タグを閉じる
-        writer.close();                                             // ファイルをクローズ
+
+    public void close() {
+        writer.println("</body></html>");
+        writer.close();
     }
+
     public String getResult() {
-        return filename;                                            // ファイル名を返す
+        return filename;
     }
 }
