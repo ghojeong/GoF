@@ -4,7 +4,7 @@
 
 - UML(Unified Modeling Language)
 
-### Class Diagram 기초
+### [Class Diagram](https://minwan1.github.io/2018/02/04/2018-02-04-Class-Diagram) 기초
 
 클래스, 인스턴스, 인터페이스 등의 정적 관계
 
