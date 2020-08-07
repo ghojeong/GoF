@@ -26,15 +26,15 @@ public class Main {
             tomura.add(new File("game.doc", 400));
             tomura.add(new File("junk.mail", 500));
 
-            FileFindVisitor ffv = new FileFindVisitor(".html");     
-            rootdir.accept(ffv);                                    
+            FileFindVisitor ffv = new FileFindVisitor(".html");
+            rootdir.accept(ffv);
 
             System.out.println("HTML files are:");
-            Iterator it = ffv.getFoundFiles();                      
-            while (it.hasNext()) {                                  
-                File file = (File)it.next();                        
+            Iterator it = ffv.getFoundFiles();
+            while (it.hasNext()) {
+                File file = (File) it.next();
                 System.out.println(file.toString());
-            }                                                       
+            }
         } catch (FileTreatmentException e) {
             e.printStackTrace();
         }

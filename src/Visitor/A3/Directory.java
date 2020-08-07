@@ -2,31 +2,37 @@ import java.util.Iterator;
 import java.util.ArrayList;
 
 public class Directory extends Entry {
-    private String name;                    // ディレクトリの名前
-    private ArrayList dir = new ArrayList();      // ディレクトリエントリの集合
-    public Directory(String name) {         // コンストラクタ
+    private String name;
+    private ArrayList dir = new ArrayList();
+
+    public Directory(String name) {
         this.name = name;
     }
-    public String getName() {               // 名前を得る
+
+    public String getName() {
         return name;
     }
-    public int getSize() {                  // サイズを得る
+
+    public int getSize() {
         int size = 0;
         Iterator it = dir.iterator();
         while (it.hasNext()) {
-            Entry entry = (Entry)it.next();
+            Entry entry = (Entry) it.next();
             size += entry.getSize();
         }
         return size;
     }
-    public Entry add(Entry entry) {         // エントリの追加
+
+    public Entry add(Entry entry) {
         dir.add(entry);
         return this;
     }
-    public Iterator iterator() {      // Iteratorの生成
+
+    public Iterator iterator() {
         return dir.iterator();
     }
-    public void accept(Visitor v) {         // 訪問者の受け入れ
+
+    public void accept(Visitor v) {
         v.visit(this);
     }
 }

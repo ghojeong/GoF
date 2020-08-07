@@ -4,21 +4,25 @@ import java.util.ArrayList;
 public class FileFindVisitor extends Visitor {
     private String filetype;
     private ArrayList found = new ArrayList();
-    public FileFindVisitor(String filetype) {           // ".txt"のように拡張子を.付きで指定
+
+    public FileFindVisitor(String filetype) {
         this.filetype = filetype;
     }
-    public Iterator getFoundFiles() {                   // 見つかったファイルを得る
+
+    public Iterator getFoundFiles() {
         return found.iterator();
     }
-    public void visit(File file) {                  // ファイルを訪問したときに呼ばれる
+
+    public void visit(File file) {
         if (file.getName().endsWith(filetype)) {
             found.add(file);
         }
     }
-    public void visit(Directory directory) {   // ディレクトリを訪問したときに呼ばれる
+
+    public void visit(Directory directory) {
         Iterator it = directory.iterator();
         while (it.hasNext()) {
-            Entry entry = (Entry)it.next();
+            Entry entry = (Entry) it.next();
             entry.accept(this);
         }
     }
