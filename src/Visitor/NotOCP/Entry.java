@@ -7,8 +7,7 @@ public abstract class Entry {
 
     public abstract void visit(String currentDir);
 
-    public Entry add(Entry entry) {
-        return null;
+    public void add(Entry entry) {
     }
 
     public Iterator<Entry> iterator() {

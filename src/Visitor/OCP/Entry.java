@@ -5,8 +5,7 @@ public abstract class Entry implements Element {
 
     public abstract int getSize();
 
-    public Entry add(Entry entry) {
-        return null;
+    public void add(Entry entry) {
     }
 
     public Iterator<Entry> iterator() {

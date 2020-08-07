@@ -23,9 +23,8 @@ public class Directory extends Entry {
         return size;
     }
 
-    public Entry add(Entry entry) {
+    public void add(Entry entry) {
         dir.add(entry);
-        return this;
     }
 
     public Iterator<Entry> iterator() {
