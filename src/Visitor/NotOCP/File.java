@@ -15,7 +15,7 @@ public class File extends Entry {
         return size;
     }
 
-    public void accept(Visitor v) {
-        v.visit(this);
+    public void visit(String currentDir) {
+        System.out.println(currentDir + "/" + this);
     }
 }

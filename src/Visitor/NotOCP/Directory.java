@@ -23,6 +23,17 @@ public class Directory extends Entry {
         return size;
     }
 
+    public void visit(String currentDir) {
+        System.out.println(currentDir + "/" + this);
+        String saveDir = currentDir;
+        currentDir = currentDir + "/" + getName();
+        Iterator<Entry> it = iterator();
+        while (it.hasNext()) {
+            it.next().visit(currentDir);
+        }
+        currentDir = saveDir;
+    }
+
     public Entry add(Entry entry) {
         dir.add(entry);
         return this;
@@ -30,9 +41,5 @@ public class Directory extends Entry {
 
     public Iterator<Entry> iterator() {
         return dir.iterator();
-    }
-
-    public void accept(Visitor v) {
-        v.visit(this);
     }
 }
