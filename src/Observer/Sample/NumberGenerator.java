@@ -2,20 +2,25 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 public abstract class NumberGenerator {
-    private ArrayList observers = new ArrayList();        // Observerたちを保持
-    public void addObserver(Observer observer) {    // Observerを追加
+    private ArrayList<Observer> observers = new ArrayList<Observer>();
+
+    public void addObserver(Observer observer) {
         observers.add(observer);
     }
-    public void deleteObserver(Observer observer) { // Observerを削除
+
+    public void deleteObserver(Observer observer) {
         observers.remove(observer);
     }
-    public void notifyObservers() {               // Observerへ通知
-        Iterator it = observers.iterator();
+
+    public void notifyObservers() {
+        Iterator<Observer> it = observers.iterator();
         while (it.hasNext()) {
-            Observer o = (Observer)it.next();
+            Observer o = (Observer) it.next();
             o.update(this);
         }
     }
-    public abstract int getNumber();                // 数を取得する
-    public abstract void execute();                 // 数を生成する
+
+    public abstract int getNumber();
+
+    public abstract void execute();
 }
