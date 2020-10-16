@@ -1,23 +1,29 @@
 public class Printer implements Printable {
     private String name;
+
     public Printer() {
-        heavyJob("Printer¤Î¥¤¥ó¥¹¥¿¥ó¥¹¤òÀ¸À®Ãæ");
+        heavyJob("Printerì˜ ì¸ìŠ¤í„´ìŠ¤ë¥¼ ìƒì„± ì¤‘");
     }
-    public Printer(String name) {                   // ¥³¥ó¥¹¥È¥é¥¯¥¿
+
+    public Printer(String name) {
         this.name = name;
-        heavyJob("Printer¤Î¥¤¥ó¥¹¥¿¥ó¥¹(" + name + ")¤òÀ¸À®Ãæ");
+        heavyJob("Printerì˜ ì¸ìŠ¤í„´ìŠ¤ (" + name + ")ì„ ìƒì„± ì¤‘");
     }
-    public void setPrinterName(String name) {       // Ì¾Á°¤ÎÀßÄê
+
+    public void setPrinterName(String name) {
         this.name = name;
     }
-    public String getPrinterName() {                // Ì¾Á°¤Î¼èÆÀ
+
+    public String getPrinterName() {
         return name;
     }
-    public void print(String string) {              // Ì¾Á°ÉÕ¤­¤ÇÉ½¼¨
+
+    public void print(String string) {
         System.out.println("=== " + name + " ===");
         System.out.println(string);
     }
-    private void heavyJob(String msg) {             // ½Å¤¤ºî¶È(¤Î¤Ä¤â¤ê)
+
+    private void heavyJob(String msg) {
         System.out.print(msg);
         for (int i = 0; i < 5; i++) {
             try {
@@ -26,6 +32,6 @@ public class Printer implements Printable {
             }
             System.out.print(".");
         }
-        System.out.println("´°Î»¡£");
+        System.out.println("ì™„ë£Œ");
     }
 }
