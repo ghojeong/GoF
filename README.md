@@ -1,5 +1,6 @@
 # GoF
 
+- [Summary](./src/README.md)
 - Gang of Four 가 확립한 디자인 패턴들을 공부하여 정리한 레포지토리
 - 유키 히로시의 [JAVA 언어로 배우는 디자인 패턴 입문](https://github.com/michilu/dpsrc_2009-10-10)을 공부하여 정리
 

@@ -1,5 +1,7 @@
 # Summary
 
+![design_pattern](./img/design_pattern.png)
+
 ## UML 기초
 
 - UML(Unified Modeling Language)
