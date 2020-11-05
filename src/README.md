@@ -6,7 +6,7 @@
 
 - UML(Unified Modeling Language)
 
-### [Class Diagram](https://minwan1.github.io/2018/02/04/2018-02-04-Class-Diagram) 기초
+### Class Diagram 기초
 
 클래스, 인스턴스, 인터페이스 등의 정적 관계
 
@@ -18,6 +18,8 @@
 | operation | method | member function |
 
 #### 선 비교
+
+![design_pattern](./img/uml_relation.png)
 
 - 화살표 방향: 갈구는 쪽 -> 갈굼받는 쪽
 
