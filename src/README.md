@@ -4,7 +4,7 @@
 
 ## UML 기초
 
-- UML(Unified Modeling Language)
+- [UML(Unified Modeling Language)](http://www.nextree.co.kr/p6753/)
 
 ### Class Diagram 기초
 
